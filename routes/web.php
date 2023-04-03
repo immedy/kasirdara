@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardPasienController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,6 @@ Route::get('/login', function () {
     return view('Login.login');
 });
 
-Route::get('/', function () {
-    return view('Konten.Dashboard');
-});
-
-Route::get('/DashboardCariPasien', function () {
-    return view('Konten.DashboardCariPasien');
-});
-Route::get('/CobaTampilan', function () {
-    return view('Konten.CobaTampil');
-});
+Route::get('/', [DashboardPasienController::class,'index']);
+Route::post('get-tujuan-by-ambulan', [DashboardPasienController::class, 'GetTujuan']);
+Route::get('/PesanAmbulan/{NORM}', [DashboardPasienController::class, 'DetailPasien']);

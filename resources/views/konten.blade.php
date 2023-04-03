@@ -57,7 +57,7 @@
 									</div>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link {{ Request::is('DashboardCariPasien') ? 'active' : '' }}" href="/DashboardCariPasien">
+									<a class="menu-link {{ Request::is('/') ? 'active' : '' }}" href="/">
 										<span class="menu-icon ">
 											<i class="bi bi-grid fs-3"></i>
 										</span>
